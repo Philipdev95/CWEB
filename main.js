@@ -17,3 +17,9 @@ function openCloseMenu() {
         openMeny.style.display = "block";
     }
 }
+/*
+function randomcolor() {
+    var thecolor = '#' + Math.random().toString(16).slice(2, 8);
+    document.getElementById("body").style.backgroundColor = thecolor;
+}
+*/
