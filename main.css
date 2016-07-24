@@ -1,4 +1,4 @@
-html, body{
+html{
     height: 100%;
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
@@ -9,118 +9,187 @@ html{
     background-size: 700% 100%;*/
 }
 body{
-    background: rgba(0,0,0,0.8);
-    z-index: 5;
+    margin: 0px;
+    background: rgba(0,0,0,0.9);
+    z-index: 2;
+    font-family: 'Raleway', sans-serif;
+    background-image: url(bilder/background/dark_wood.png);
+}
+#desktop_entry{
+    display:none;
+}
+#mobile_entry{
+    position:fixed;
+    width: 100%;
+    top:0px;
+    left:0px;
+    z-index:99;
+    transform:scale(0);
+    margin: auto;
+}
+@keyframes entry{
+    0%{z-index:99; transform:scale(1)}
+    90%{transform:scale(1);}
+    100%{z-index:-1; transform:scale(0);}
+}
+@media screen and (min-width: 800px){
+    #desktop_entry{
+        display:block;
+        position:fixed;
+        height: 100%;
+        top:0px;
+        left:0px;
+        animation: entry 1.5s linear;
+        -webkit-animation: entry 1.5s linear;
+        transform:scale(0);
+        margin: auto;
+    }
+    #mobile_entry{
+        display:none;
+    }
+}
+#wrapper, #workdiv, #aboutdiv{
+    z-index: 3;
+    padding-bottom: 100px;
+    width: 100%;
+
+    background-image:url(bilder/background/dark_wood.jpg);
+    background-size: cover;
+    max-width: 900px;
+    margin: auto;
+}
+#bot_meny{
+    width: 100%;
+    position: fixed;
+    top: 100%;
+    margin-top: -60px;
+    height: 60px;
+    text-align: center;
+    background-color: #000;
+}
+.bot_meny_links{
+    margin: 0px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 110%;
+    background: rgba(161, 247, 3, 0.5);
+    width: 32.5%;
+    height: 40px;
+    padding-top: 20px 
+}
+.bot_meny_links:hover{
+    background: rgba(161, 247, 3, 0.7);
+    color: #000;
+}
+.bot_meny_links_active{
+    background: rgba(161, 247, 3, 0.8);
+    color: #000;
+    box-shadow: inset 0 5px 10px #000;
 }
 @keyframes gradient_back { 
     0%{background-position:0% 72%}
     50%{background-position:100% 29%}
     100%{background-position:0% 72%}
 }
-#background{
-    height: 100%;
-    position: fixed;
-    z-index: 0;
-    text-align: center;
-}
-#backvideo{
-    height: 100%;
-    margin: auto;
-}
 header{
+    z-index: 30;
     text-align: center;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+#logolink{
+    width: 100%;
+    height:100px;
+    overflow: hidden;
 }
 #logga{
-    position: fixed;
-    left: 50%;
-    width: 120px;
-    margin-left: -60px;
-}
-#meny{
-    display: none;
-    background: rgba(200,200,200,0.8);
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    left: 0%;
-    top: 0%;
-    z-index: 10;
-}
-#openmeny, #closemeny{
-    position: fixed;
-    margin-left: 0px;
-    height: 8%;
-    left: 2%;
-    top: 90%;
-    animation: snurr 5s infinite linear;
-    z-index: 10;
-}
-@keyframes snurr{
-    from{transform: rotate(360deg)}
-    to{transform: rotate(0deg)}
-}
-.menylink{
-    text-decoration: none;
-    font-size: 50px;
-    display: block;
-    margin: 10%;
-    color: #fff;
-}
-.menylink:hover{
-    color: #FF6600;
-}
-.frontlinks{
-    background-position: center;
-    background-size: cover;
-    position: fixed;
-    top: 35%;
-    width: 40%;
-    height: 200px;
-    text-align: center;
-    color: #fff;
-    text-decoration: none;
-    font-size: 30px;
-    transition: 0.5s;
-}
-.frontlinks:hover{
-    box-shadow: 0px 0px 5px 5px #333;
-}
-.frontlinks p{
-    color: #f60;
-    background: rgba(0,0,0,0.6);
-    height: 40px;
-    margin-top: 50%;
-}
-#frontlink1{
-    background-image: url(bilder/typing.jpg);
-    left: 5%;
-}
-#frontlink2{
-    background-image: url(bilder/contact.png);
-    left: 55%;
-}
-#omoss{
-    width: 60%;
-    top: 60%;
-    height: 20%;
-    left: 50%;
-    margin-left: -30%;
-    background-image: url(bilder/omoss.png);
+    margin-top: -70px;
+    z-index: 30;
+    height:200px;
 }
 #wrapper{
-    height: 20%;
+    padding-top: 130px;
     z-index: 2;
+    overflow: hidden;
 }
-
-/* JOBBSIDAN */
+#skapa{
+    max-width: 600px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    font-weight: 400;
+    color: #eee;
+    text-align: center;
+    padding: 10px 80px;
+    background: rgba(161, 247, 3,0.6);
+    box-shadow: 0px 0px 10px 10px rgba(161, 247, 3, 0.6);
+    font-size: 25px;
+}
+#intro_box{
+    max-width: 700px;
+    margin: 0px auto;
+    background: rgba(161, 247, 3, 0.4);
+    box-shadow: 0px 0px 10px 10px rgba(161, 247, 3, 0.4);
+    padding: 10px 30px;
+}
+#why{
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+    font-size: 35px;
+}
+#bec{
+    color: #ccc;
+    text-align: left;
+    font-weight: 300;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.info_title{
+    text-align:center;
+    padding: 4px;
+    color: #eee;
+    font-size: 30px;
+    box-shadow: 0px 0px 5px 2px rgba(200,200,200,0.2);
+    background:rgba(200,200,200,0.2);
+    font-weight: 300;
+    transition:0.5s;
+    cursor: pointer;
+}
+.info_title:hover{
+    box-shadow: 0px 0px 5px 2px rgba(200,200,200,0.4);
+    background:rgba(200,200,200,0.4);
+    
+}
+.show_p{
+    transform: rotate(0deg);
+    transition: 0.5s;
+    margin: auto;
+    width: 20px;
+    margin: 0px 5px;
+}
+.info_p{
+    font-size: 20px;
+    color: #eee;
+    transition: 0.3s;
+}
+.info_p a{
+    color:#eee;
+}
+.info_p a:hover{
+    color: #f72;
+}
+/*-JOBBSIDAN-*/
 
 #workdiv{
-    position: fixed;
-    z-index: 2;
+    z-index: 0;
     width: 100%;
     height: 100%;
-    padding: 150px 0px 300px 0px;
+    padding: 100px 0px 100px 0px;
     overflow: scroll;
+    text-align: center;
 }
 #workdiv div{
     padding: 20px 70px;
@@ -137,7 +206,7 @@ header{
     font-size: 20px;
 }
 #workdiv div a:hover{
-    background: rgba(255,102,0, 0.7);
+    background: rgba(161, 247, 3, 0.7);
     color: #fff;
     border-color: #fff;
 }
@@ -147,31 +216,112 @@ header{
     font-weight: 200;
 }
 @media screen and(min-width:800px){
+
     #workdiv div a{
         display: inline-block;
-        width: 30%;
+        width: 20%;
     }
 }
 
-/*---SLUT---*/
+/*---END---*/
+
+.knappar{
+    background: rgba(0,0,0,0.2);
+    text-decoration: none;
+    border-style: solid;
+    text-align: center;
+    font-size: 20px;
+    display: block;
+    padding: 20px;
+    margin: 20px;
+    color: #fff;
+    
+}
+.knappar:hover{
+    background: rgba(255,102,0, 0.7);
+    color: #fff;
+    border-color: #fff;
+}
+
+
 /*---KONTAKT---*/
 #kontaktdiv{
-    padding-top: 40%;
+    padding-top: 0;
 }
 #kontaktdiv h2{
     text-align: center;
     color: #fff;
-    
+    margin-bottom: 50px;
 }
+#kontaktdiv h3{
+    text-align: center;
+    color: #fff;
+}
+/*---END---*/
+
+
+/*---ABOUT---*/
+@media screen and (min-width: 600px){
+    #aboutdiv{
+        padding-top: 20%;
+    }
+}
+#aboutdiv{
+    padding-top: 100px;
+    margin-bottom: 150px;
+    text-align: center;
+}
+#vemh2{
+    font-size: 35px;
+}
+.aboutus{
+    background: rgba(0,0,0,0.2);
+    color: #fff;
+    padding: 20px;
+    font-size: 20px;
+}
+#knowledge_div{
+    margin: 50px auto;
+    max-width: 700px;
+    color:#fff;
+    text-align:center;
+}
+#knowledge_div h1{
+    text-align:center;
+}
+.rutor{
+    background: rgba(0,0,0,0.2);
+    margin: 20px;
+    text-align: center;
+    padding: 20px;
+    border-style: solid;
+    font-size: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    transition: 1s;
+}
+.rutor:hover{
+    background: rgba(200,200,200,0.5);
+    border-radius: 15px;
+}
+#knowledge_div .rutor{
+    animation: move-skills 2s infinite;
+}
+@keyframes move-skills{
+    0%{border-radius: 0px;}
+    50%{border-radius: 20px;}
+    100%{border-radius: 0px;}
+}
+/*---END---*/
 
 
 footer{
-    color: #f60;
-    position: fixed;
-    top: 100%;
-    margin-top:-65px;
-    height: 55px;
-    text-align: center;
-    padding: 5px;
     width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+.fb-like{
+    margin: 20px;
+    padding: 20px 0px;
 }

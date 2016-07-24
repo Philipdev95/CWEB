@@ -1,25 +1,54 @@
 function loading() {
-    document.getElementById("meny").style.display = "none";
+    document.getElementById("info_one").style.transform = "scale(0)";
+    document.getElementById("info_one").style.height = "0px";
+    document.getElementById("info_two").style.transform = "scale(0)";
+    document.getElementById("info_two").style.height = "0px";
+    document.getElementById("info_three").style.transform = "scale(0)";
+    document.getElementById("info_three").style.height = "0px";
+    document.getElementsByClassName("show_p").style.transform = "rotate(0deg)";
 }
-window.onload = loading();
+window.onload = loading;
 
-function openCloseMenu() {
+function open_one() {
+    var text = document.getElementById("info_one");
+    var arrow = document.getElementById("show_p_1");
     
-    var stangMeny = document.getElementById("closemeny"),
-        openMeny = document.getElementById("openmeny"),
-        meny = document.getElementById("meny");
-    
-    if (meny.style.display == "none") {
-        meny.style.display = "block";
-        openMeny.style.display = "none";
-    } else {
-        meny.style.display = "none";
-        openMeny.style.display = "block";
+    if (text.style.transform == "scale(0)") {
+        text.style.transform = "scale(1)";
+        text.style.height = "auto";
+        arrow.style.transform ="rotate(180deg)";
+            
+    } else if (text.style.transform == "scale(1)") {
+        text.style.transform = "scale(0)";
+        text.style.height = "0px";
+        arrow.style.transform ="rotate(0deg)";
     }
 }
-/*
-function randomcolor() {
-    var thecolor = '#' + Math.random().toString(16).slice(2, 8);
-    document.getElementById("body").style.backgroundColor = thecolor;
+function open_two() {
+    var text = document.getElementById("info_two");
+    var arrow = document.getElementById("show_p_2");
+    
+    if (text.style.transform == "scale(0)") {
+        text.style.transform = "scale(1)";
+        text.style.height = "auto";
+        arrow.style.transform ="rotate(180deg)";
+    } else if (text.style.transform == "scale(1)") {
+        text.style.transform = "scale(0)";
+        text.style.height = "0px";
+        arrow.style.transform ="rotate(0deg)";
+    }
 }
-*/
+function open_three() {
+    var text = document.getElementById("info_three");
+    var arrow = document.getElementById("show_p_3");
+    
+    if (text.style.transform == "scale(0)") {
+        text.style.transform = "scale(1)";
+        text.style.height = "auto";
+        arrow.style.transform ="rotate(180deg)";
+    } else if (text.style.transform == "scale(1)") {
+        text.style.transform = "scale(0)";
+        text.style.height = "0px";
+        arrow.style.transform ="rotate(0deg)";
+    }
+}
